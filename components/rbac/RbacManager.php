@@ -9,6 +9,7 @@
 namespace app\components\rbac;
 
 
+use app\components\Tools;
 use app\models\User;
 use Yii;
 use yii\bootstrap\ActiveForm;
@@ -21,7 +22,7 @@ class RbacManager extends PhpManager
     {
         parent::init();
         if (!Yii::$app->user->isGuest and Yii::$app->user instanceof RbacInterface) {
-            $roleName = User::get()->getType();
+            $roleName = User::get()->getRole();
             if (!array_key_exists(User::get()->getId(), $this->assignments)) {
                 /** @noinspection PhpUnhandledExceptionInspection */
                 $this->assign(new Role(['name' => $roleName]), User::get()->getId());

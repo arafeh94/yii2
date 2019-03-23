@@ -14,5 +14,5 @@ interface RbacInterface
     /**
      * @return int|string
      */
-    function getType();
+    function getRole();
 }
