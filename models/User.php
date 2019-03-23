@@ -2,8 +2,20 @@
 
 namespace app\models;
 
-class User extends \yii\base\Object implements \yii\web\IdentityInterface
+use app\components\rbac\RbacInterface;
+use Yii;
+
+class User extends \yii\base\Object implements \yii\web\IdentityInterface,RbacInterface
 {
+    /**
+     * @return User
+     */
+    public static function get()
+    {
+        /** @noinspection PhpIncompatibleReturnTypeInspection */
+        return Yii::$app->user->identity;
+    }
+
     public $id;
     public $username;
     public $password;
@@ -100,5 +112,13 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
     public function validatePassword($password)
     {
         return $this->password === $password;
+    }
+
+    /**
+     * @return int|string
+     */
+    function getType()
+    {
+        // TODO: Implement getType() method.
     }
 }

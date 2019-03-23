@@ -17,7 +17,11 @@ $config = [
             'defaultRoute' => 'v1'
         ]
     ],
+
     'components' => [
+        'authManager' => [
+            'class' => 'app\components\rbac\RbacManager',
+        ],
         'request' => [
             'cookieValidationKey' => 'lFD4KQIfAuKi5bDQowx5167DpPQDh1M0',
         ],
