@@ -117,8 +117,8 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface,RbacIn
     /**
      * @return int|string
      */
-    function getType()
+    function getRole()
     {
-        // TODO: Implement getType() method.
+        return "admin"
     }
 }
