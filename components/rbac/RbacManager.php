@@ -21,7 +21,7 @@ class RbacManager extends PhpManager
     public function init()
     {
         parent::init();
-        if (!Yii::$app->user->isGuest and Yii::$app->user instanceof RbacInterface) {
+        if (!Yii::$app->user->isGuest and User::get() instanceof RbacInterface) {
             $roleName = User::get()->getRole();
             if (!array_key_exists(User::get()->getId(), $this->assignments)) {
                 /** @noinspection PhpUnhandledExceptionInspection */
