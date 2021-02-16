@@ -119,6 +119,6 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface,RbacIn
      */
     function getRole()
     {
-        return "admin"
+        return "admin";
     }
 }
