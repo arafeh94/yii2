@@ -5,7 +5,7 @@ namespace app\models;
 use app\components\rbac\RbacInterface;
 use Yii;
 
-class User extends \yii\base\Object implements \yii\web\IdentityInterface,RbacInterface
+class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface, RbacInterface
 {
     /**
      * @return User
